@@ -1,0 +1,25 @@
+<style lang='less'>
+@import '../assets/less/public.less';
+</style>
+<template>
+  <view class="test">hello world!</view>
+</template>
+
+<script>
+import wepy from 'wepy';
+import { showToast, wxGo, getClassDom } from '@/utils/method.js';
+export default class Tests extends wepy.page {
+  //如果是模板文件，wepy.page 改成wepy.component
+  customData = {}; // 自定义数据
+  customFunction() {} //自定义方法
+  onLoad() {} // 在Page和Component共用的生命周期函数
+  async onShow() {} // 只在Page中存在的页面生命周期函数
+  config = {}; // 只在Page实例中存在的配置数据，对应于原生的page.json文件
+  data = {}; // 页面所需数据均需在这里声明，可用于模板数据绑定
+  components = {}; // 声明页面中所引用的组件，或声明组件中所引用的子组件
+  computed = {}; // 声明计算属性
+  watch = {}; // 声明数据watcher
+  methods = {}; // 声明页面wxml中标签的事件处理函数。注意，此处只用于声明页面wxml中标签的bind、catch事件，自定义方法需以自定义方法的方式声明
+  events = {}; // 声明组件之间的事件处理函数
+}
+</script>

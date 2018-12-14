@@ -1,0 +1,65 @@
+<style lang="less">
+</style>
+
+<script>
+import 'wepy-async-function';
+
+import wepy from 'wepy';
+
+import { getStorage, showToast, wxGo, showLoading } from '@/utils/method.js';
+
+export default class extends wepy.app {
+  config = {
+    pages: ['pages/test'],
+    usingComponents: {
+      'van-field': '/components/vant/field/index'
+    },
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: '酒来了',
+      navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      backgroundColor: '#fff',
+      borderStyle: 'white',
+      selectedColor: '#ff6300',
+      color: '#666',
+      list: [
+        {
+          pagePath: 'pages/test',
+          iconPath: 'assets/images/book.png',
+          selectedIconPath: 'assets/images/book_choose.png',
+          text: '首页'
+        },
+        {
+          pagePath: 'pages/test',
+          iconPath: 'assets/images/shopping.png',
+          selectedIconPath: 'assets/images/shopping_choose.png',
+          text: '购物车'
+        },
+        {
+          pagePath: 'pages/test',
+          iconPath: 'assets/images/account.png',
+          selectedIconPath: 'assets/images/account_choose.png',
+          text: '个人中心'
+        }
+      ]
+    }
+  };
+
+  globalData = {
+    userInfo: null,
+    server: null,
+    isLogin: true
+  };
+
+  constructor() {
+    super();
+    this.use('requestfix');
+    this.use('promisify');
+  }
+
+  async onLaunch() {}
+}
+</script>
