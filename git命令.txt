@@ -1,0 +1,88 @@
+/* git 初始化 */
+
+下载，就不说了，百度跟着下一步就ok
+
+//创建文件，然后在文件内右键调出git bash输入
+git init
+
+//设置远程仓库地址
+git remote add githup项目地址
+
+//配置用户名等（这步可暂时不管，会提示你的）
+git config --global user.name "各自名字"
+git config --global user.email "各自邮箱"
+
+
+
+//查看分支：
+git branch
+
+//创建分支：
+git branch <name>
+
+//切换分支：
+git checkout <name>
+
+//创建+切换分支：
+git checkout -b <name>
+
+合并某分支到当前分支：
+git merge <name>
+
+
+//远程开好分支然后拉到本地
+
+git checkout -b feature-branch origin/分支名
+
+//本地开好分支然后推送到远程
+git checkout -b feature-branc
+git push origin feature-branch:feature-branch 
+
+//删除远程分支
+git push origin--delete 分支名
+或者
+git branch -r -d origin/分支名
+
+//删除本地分支
+git branch -d 分支名
+
+//关联远程分支
+git branch --set-upstream-to=origin/远程仓库分支名 本地分支名
+
+
+// 本地代码修改了提交到远程仓库流程：
+
+
+
+//准备提交代码时候，更新一下
+git pull （拉取远程分支信息）
+
+
+第一步，根据情况下面四选一
+    
+   git add src （src是指你项目下的src文件提交）
+   
+·  git add -A  提交所有变化---常用
+
+·  git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
+
+·  git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
+
+第二步，根据情况下面三选一
+·  git add -A  提交所有变化
+
+·  git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
+
+·  git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
+
+第三步，提交到远程仓库
+    git commit -am "这里写上备注"
+    
+第四步，pull到远程分支    
+    git push
+
+完毕后输入 git status 通常，若提示clean 字眼，表示干净的，成功。
+
+    
+
+   
